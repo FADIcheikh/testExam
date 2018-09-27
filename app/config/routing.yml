@@ -1,0 +1,4 @@
+chantier:
+    resource: "@chantierBundle/Resources/config/routing.yml"
+    prefix:   /
+

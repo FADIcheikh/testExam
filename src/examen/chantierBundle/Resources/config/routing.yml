@@ -1,0 +1,24 @@
+chantier_homepage:
+    path:     /
+    defaults: { _controller: chantierBundle:chantier:index }
+
+
+chantier_afficherchantierpage:
+    path:     /afficherchantier
+    defaults: { _controller: chantierBundle:chantier:afficherchantier }
+    
+    
+    
+chantier_ajouterouvrierpage:
+    path:     /ajouterouvrier
+    defaults: { _controller: chantierBundle:chantier:ajouterouvrier }
+    
+    
+chantier_detailchantierpage:
+    path:     /detailchantier/{id}/
+    defaults: { _controller: chantierBundle:chantier:detailchantier }
+    
+    
+chantier_supprimerouvrierpage:
+    path:     /supprimer/{$chantier}
+    defaults: { _controller: chantierBundle:chantier:supprimerouvrier }

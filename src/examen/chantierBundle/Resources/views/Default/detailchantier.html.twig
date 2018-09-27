@@ -1,0 +1,57 @@
+{% extends '::layout.html.twig' %}
+{% block chantier %}
+    Détail Chantier {{chantier.reference }}
+    {% endblock %}
+    
+    {% block content %}
+         <table border="4" >
+    <tr>
+        <td><center>Réference  </center></td> 
+        <td><center> Date début  </center> </td> 
+        <td><center> Loc  </center> </td> 
+  <td><center> Durée </center> </td> 
+ <td><center> Nombre des ouvriers </center> </td> 
+<td><center> Coût </center> </td> 
+
+    </tr>   
+    
+    <tr>
+        
+            <td><center>{{chantier.reference }}</center></td>
+<td><center>{{chantier.datedebut|date('y/m/ds') }}</center></td>
+            <td><center>{{chantier.localite }}</center></td>
+        <td><center> {{chantier.duree }}</center> </td> 
+    <td><center> {{nbouv }}</center> </td> 
+           <td><center> </center> </td>      
+       
+    </tr>
+  
+             </table>
+        
+        ***************************************
+        
+        
+        <h1>Liste des ouvriers de ce chantier :{{chantier.reference }} </h1>
+                     <table border="4" >
+    <tr>
+        <td><center>Matricule </center></td> 
+        <td><center> Nom </center> </td> 
+        <td><center> Prenom </center> </td> 
+  <td><center> Supprimer </center> </td> 
+
+    </tr>   
+    
+    <tr>
+        {% for ouvrierx in ouvrier %}
+            <td><center>{{ouvrierx.id}}</center></td>
+             <td><center>{{ouvrierx.nom}}</center></td>
+            <td><center>{{ouvrierx.prenom}}</center></td>
+        <td><center> <a href="{{path('chantier_supprimerouvrierpage',{'chantier':ouvrierx.chantier})}}">Supprimer</a> </center> </td> 
+              
+       
+    </tr>
+    {% endfor%}
+             </table>
+    {% endblock %}
+
+

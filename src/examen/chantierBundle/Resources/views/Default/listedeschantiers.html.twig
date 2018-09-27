@@ -1,0 +1,24 @@
+{% extends '::layout.html.twig' %}
+
+{% block content %}
+    <center>
+             <table border="4" >
+    <tr>
+        <td><center>Réfrence </center></td> 
+        <td><center> Date début </center> </td> 
+        <td><center> Détail </center> </td> 
+
+    </tr>   
+    
+    <tr>
+        {% for chantierx in chantier %}
+            <td><center>{{chantierx.reference}}</center></td>
+             <td><center>{{chantierx.datedebut|date('Y-m-d')}}</center></td>
+<td><center> <a href="{{path('chantier_detailchantierpage',{'id':chantierx.id})}}">Détail</a> </center> </td> 
+              
+       
+    </tr>
+    {% endfor%}
+             </table>
+             </center>
+    {% endblock %}
